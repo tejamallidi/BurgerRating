@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     public void submit(View view) {
         float ratingValue = ratingBar.getRating();
 
-        if(ratingValue < 2){
+        if(ratingValue == 0) {
+            textView.setText("Please rate our service");
+        } else if(ratingValue < 2  && ratingValue > 0){
             textView.setText("Rating: " + ratingValue + "\n We will try better next time") ;
         } else if(ratingValue <= 3 && ratingValue >= 2 ) {
             textView.setText("Rating: " + ratingValue + "\n We are constantly improving") ;
